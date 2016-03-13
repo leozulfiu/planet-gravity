@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceSets {
+    main.java.srcDir "src/main/java"
+    main.resources.srcDir "src/main/resources"
+}
+
+mainClassName = 'ch.leozulfiu.planetGravity.Main'
+
+repositories {
+    mavenCentral() 
+}
+
+jar {
+    baseName = "planet_gravity"
+    version = "1.0.0"
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'ch.leozulfiu.planetGravity.Main'
+        )
+    }
+    from configurations.compile.collect { entry -> zipTree(entry) }
+}
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
