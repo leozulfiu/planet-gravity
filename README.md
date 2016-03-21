@@ -4,7 +4,7 @@ Inspired by [Kerbal Space Program](https://kerbalspaceprogram.com) I created a s
 simulation where I test realistic planet gravity. A planet has its own gravitational field which attracts the small rocket.
 The application is written with [Processing](http://processing.org/) and [Box2D for Processing](https://github.com/shiffman/Box2D-for-Processing)
 
-![alt tag](https://raw.githubusercontent.com/leozulfiu/planet-gravity-box2d/master/screenshots/demo.gif)
+![GIF](https://raw.githubusercontent.com/leozulfiu/planet-gravity-box2d/master/screenshots/demo.gif)
 
 ## Installation
 
